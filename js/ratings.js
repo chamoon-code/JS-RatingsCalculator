@@ -3,7 +3,7 @@ const collect_ratings = () => {
   let rating = 0;
   const elements = document.querySelectorAll('.rating');
   elements.forEach(element => {
-    rating = parseInt(element.id.replace('star',));
+    rating = parseInt(element.id.replace('star',''));
     ratings.count += parseInt(element.value);
     ratings.sum += parseInt(element.value) * rating;
   });
@@ -17,5 +17,5 @@ const collect_ratings = () => {
 
 document.addEventListener('change', () => {
   const ratings = collect_ratings();
-  document.querySelectorAll('#average').value = ratings.average.toFixed(2);
+  document.querySelector('#average').value = ratings.average.toFixed(2);
 });
